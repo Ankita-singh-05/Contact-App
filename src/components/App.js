@@ -25,7 +25,16 @@ function App() {
   // addContactHandler function
   const addContactHandler = (contact) => {
     console.log(contact);
-    setContacts([...contacts, contact]);
+    setContacts([...contacts,{id: uuid(), ...contacts}]);
+  };
+
+  // remove contact handler --delete function
+  const removeContactHandler = (id) => {
+    const newContactList = contacts.filter((contact) => {
+      return contact.id  !== id;
+    });
+
+    setContacts(newContactList);
   };
 
   useEffect(() => {
@@ -42,7 +51,7 @@ function App() {
       <div className="ui container">
         <Header />
         <AddContact addContactHandler={ addContactHandler } />
-        <ContactList contacts={contacts} />
+        <ContactList contacts={contacts} getContactId= { removeContactHandler }  />
       </div>
     </>
   );
