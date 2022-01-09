@@ -11,7 +11,7 @@ const ContactList = (props) => {
     const contacts = [{
         id: "1",
         name: "ankita",
-        email: "asnkita"
+        email: "aankita@gmail.com"
     }];
     const renderContactList = contacts.map((contact) => {
         return (
@@ -25,9 +25,12 @@ const ContactList = (props) => {
     
     return (
             <>
+            <div class="main">
+                <h2>Contact List</h2>
                 <div className="ui celled list">
                     {renderContactList}
                 </div>
+            </div>
             </>
     );
 };

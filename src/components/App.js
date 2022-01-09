@@ -55,7 +55,7 @@ function App() {
         <Switch>
           {/* Switch match the first route that is / and diplay the contactList in the /add route also so we need to write exact */}
         <Route path="/" exact component = { ContactList } />
-        <Route path="/add" component = {AddContact} />
+        <Route path="/add" component = { AddContact } />
         </Switch>
         {/* <AddContact addContactHandler={ addContactHandler } />
         <ContactList contacts={contacts} getContactId= { removeContactHandler }  /> */}
