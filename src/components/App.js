@@ -25,7 +25,7 @@ function App() {
   // addContactHandler function
   const addContactHandler = (contact) => {
     console.log(contact);
-    setContacts([...contacts,{id: uuid(), ...contacts}]);
+    setContacts([...contacts,{ id: uuid(), ...contact }]);
   };
 
   // remove contact handler --delete function
@@ -40,7 +40,7 @@ function App() {
   useEffect(() => {
     const retriveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     if (retriveContacts) setContacts(retriveContacts);
-  }, [contacts]);
+  }, []);
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));

@@ -1,7 +1,7 @@
 import React from "react";
 
 const ContactCard = (props) => {
-    const { id, name, email } = props.contacts;
+    const { id, name, email } = props.contact;
     return (
         <div className="item">
             <img className="ui avatar image" src="https://cdn.pixabay.com/photo/2013/07/13/12/07/avatar-159236_1280.png" alt="user" />

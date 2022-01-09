@@ -8,7 +8,13 @@ const ContactList = (props) => {
         props.getContactId(id);
     }; 
     const renderContactList = props.contacts.map((contact) => {
-        return <ContactCard contacts={contact} clickHandler= { deleteContactHandler } />;
+        return (
+        <ContactCard 
+        contact={contact} 
+        clickHandler= { deleteContactHandler } 
+        key = { contact.id }
+        />
+        );
     });
     
     return (
