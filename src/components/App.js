@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { uuid } from "uuidv4";
 import Header from "./Header";
 import AddContact from "./AddContact";
@@ -49,9 +50,16 @@ function App() {
   return (
     <>  
       <div className="ui container">
+        <Router>
         <Header />
-        <AddContact addContactHandler={ addContactHandler } />
-        <ContactList contacts={contacts} getContactId= { removeContactHandler }  />
+        <Switch>
+          {/* Switch match the first route that is / and diplay the contactList in the /add route also so we need to write exact */}
+        <Route path="/" exact component = { ContactList } />
+        <Route path="/add" component = {AddContact} />
+        </Switch>
+        {/* <AddContact addContactHandler={ addContactHandler } />
+        <ContactList contacts={contacts} getContactId= { removeContactHandler }  /> */}
+        </Router>
       </div>
     </>
   );
