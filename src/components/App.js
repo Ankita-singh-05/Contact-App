@@ -54,14 +54,19 @@ function App() {
         <Header />
         <Switch>
           {/* Switch match the first route that is / and diplay the contactList in the /add route also so we need to write exact */}
-        <Route path="/" exact component = { () =>
-          <ContactList  
-            contacts = {contacts}
-            getContactId = {removeContactHandler}
-          /> } />
+        <Route path="/" exact 
+        render = {(props) => (
+        <ContactList 
+        {...props} 
+        contacts={contacts} 
+        getContactId= { removeContactHandler } />)}
+        />
 
-        <Route path="/add" component = { () => (
-        <AddContact addContactHandler={ addContactHandler } /> )} />
+        <Route path="/add" 
+         render = {(props) => (
+         <AddContact {...props} addContactHandler = {addContactHandler} />)}
+        />
+
         </Switch>
         {/* <AddContact addContactHandler={ addContactHandler } />
         <ContactList contacts={contacts} getContactId= { removeContactHandler }  /> */}
