@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { uuid } from "uuidv4";
 import Header from "./Header";
 import AddContact from "./AddContact";
-import ContactList from "./ContactList"
+import ContactList from "./ContactList";
+import ContactDetail from "./ContactCard";
 
 function App() {
 
@@ -66,6 +67,10 @@ function App() {
          render = {(props) => (
          <AddContact {...props} addContactHandler = {addContactHandler} />)}
         />
+
+        <Route 
+        path = "/contact/:id" 
+        component= { ContactDetail } />
 
         </Switch>
         {/* <AddContact addContactHandler={ addContactHandler } />
