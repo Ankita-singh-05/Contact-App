@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ContactCard = (props) => {
-    console.log(props);
+    const {name, email } = props.location.state.contact;
+    //console.log(props);
     return (
        <>
         <div className="main">
@@ -12,11 +13,20 @@ const ContactCard = (props) => {
                 </div>
                 <div className="content">
                     <div className="header">
-                        Ankita
+                        {name}
                     </div>
                     <div className="description">
-                        as.ankita@gmail.com
+                        {email}
                     </div>
+                </div>
+            </div>
+            <div>
+                <div className="center-div">
+                    <Link to="/">
+                        <button className="ui button blue center">
+                            Back to Contact List
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>
