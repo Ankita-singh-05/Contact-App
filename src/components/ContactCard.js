@@ -7,7 +7,7 @@ const ContactDetail = (props) => {
         <div className="item">
             <img className="ui avatar image" src="https://cdn.pixabay.com/photo/2013/07/13/12/07/avatar-159236_1280.png" alt="user" />
             <div className="content">
-                <Link to={`/contact/${id}`} >
+                <Link to={{ pathname: `/contact/${id}`, state: {contact: props.contact} }} >
                     <div className="header">{name}</div>
                     <div>{email}</div>
                 </Link>
